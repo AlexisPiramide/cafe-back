@@ -8,4 +8,7 @@ export default class tiposUsecases{
         return this.tiposRepository.listar();
     }
 
+    async poblar(): Promise<Tipos[]> {
+        return this.tiposRepository.poblar();
+    }
 }

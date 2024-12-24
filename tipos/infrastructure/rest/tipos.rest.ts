@@ -18,3 +18,10 @@ router.get("/tipos", async (req: Request, res: Response) => {
     const tipos = await tiposusecases.listar();
     res.json(tipos);
 });
+
+router.get("/poblar", async (req: Request, res: Response) => {
+    const tipos = await tiposusecases.poblar();
+    res.json(tipos);
+});
+
+export default router;

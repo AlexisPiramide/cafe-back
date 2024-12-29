@@ -5,7 +5,6 @@ import cafesUsecases from "../../application/cafes.usecases";
 import Cafe from "../../domain/Cafe";
 
 
-
 const cafesRepositoryPostgres : cafeRepository = new CafesRepositoryPostgres();
 
 const cafesusecases = new cafesUsecases(cafesRepositoryPostgres);
@@ -37,7 +36,12 @@ router.get("/cafes/:nombre", async (req: Request, res: Response) => {
         const cafe : Cafe = await cafesusecases.buscar(nombre);
         res.json(cafe);
     }catch(error){
-        res.status(500).json({error: error.message});
+        switch(error.status){
+            case 404:
+                return res.status(404).json({error: error.message});
+            case 500:
+                return res.status(500).json({error: error.message});
+        }
     }
 });
 
@@ -50,5 +54,8 @@ router.delete("/cafes/:nombre", async (req: Request, res: Response) => {
         res.status(500).json({error: error.message});
     }
 });
+
+
+
 
 export default router;

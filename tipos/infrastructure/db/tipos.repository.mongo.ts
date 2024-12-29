@@ -1,5 +1,5 @@
 import { collections } from "../../../context/mongo.db";
-import Tipos from "../../domain/Tipos";
+import Tipos from "../../domain/Tipo";
 import tiposRepository from "../../domain/tipos.repository";
 
 export default class tiposRepositoryMongo implements tiposRepository {

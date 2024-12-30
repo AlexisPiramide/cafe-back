@@ -1,6 +1,6 @@
 import Cafe from "../domain/Cafe";
 import cafeRepository from "../domain/cafes.repository";
-import uploadFile from "../../context/s3";
+import {uploadFile} from "../../context/s3";
 export default class cafeUsecases{
     constructor(private cafeRepository: cafeRepository) {}
     

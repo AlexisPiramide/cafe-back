@@ -4,7 +4,7 @@ import Cafe from "../../domain/Cafe";
 import cafeRepository from "../../domain/cafes.repository";
 
 export default class CafesRepositoryPostgres implements cafeRepository {
-
+    
     async listar(): Promise<Cafe[]> {
         const query = "SELECT * FROM cafes";
 

@@ -16,6 +16,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 18175118N
       POSTGRES_DB: postgres
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
     networks:
       - my_network
 
@@ -27,6 +29,7 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: 220240@fppiramide.com
       PGADMIN_DEFAULT_PASSWORD: 18175118N
+      
   mongo-express:
     image: mongo-express
     container_name: mongo-express

@@ -25,4 +25,5 @@ const uploadFile = (fileName: string) => {
 };
 
 
-export default uploadFile;
+
+export {uploadFile}; ;

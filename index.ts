@@ -4,6 +4,7 @@ import cors from "cors";
 
 import routerUsuarios from "./usuarios/infrastructure/rest/usuarios.rest";
 import routerTipos from "./tipos/infrastructure/rest/tipos.rest";
+import routerCafes from "./cafes/infraestructure/rest/cafes.rest";
 
 dotenv.config();
 const port = process.env.PORT;
@@ -19,7 +20,8 @@ app.use(cors(options));
 //routers
 const api = "api/";
 app.use(`/${api}usuarios`, routerUsuarios);
-app.use(`/${api}cafes`, routerTipos);
+app.use(`/${api}tipos`, routerTipos);
+app.use(`/${api}cafes`, routerCafes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Application started on port ${port}`);

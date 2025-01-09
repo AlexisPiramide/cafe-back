@@ -15,9 +15,9 @@ export default class cafeUsecases{
     async añadir(cafe: Cafe): Promise<Cafe> {
         try{
             const nombreArchivo = cafe.nombre + cafe.tipo + Math.floor(Math.random() * 2000 + 1).toString() + ".png";
-            const result = await uploadFile(nombreArchivo);
+            //const result = await uploadFile(nombreArchivo);
 
-            if(result){
+            if(true){
                 cafe.imagen = nombreArchivo;
                 return this.cafeRepository.añadir(cafe);
             }else{

@@ -1,7 +1,6 @@
 {
   "name": "dwes-base-auth",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon index.ts"
@@ -24,7 +23,5 @@
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/pg": "^8.10.9"
-  },
-  "keywords": [],
-  "description": ""
+  }
 }

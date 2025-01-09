@@ -7,6 +7,7 @@ const dbUser = process.env.POSTGRES_USER;
 const dbPassword = process.env.POSTGRES_PASSWORD;
 const dbName = process.env.POSTGRES_DB;
 
+
 const pool = new Pool({
   max: 1000,
   connectionString: `postgres://${dbUser}:${dbPassword}@${dbHost}:5432/${dbName}`,

@@ -1,12 +1,11 @@
 import express, { Request, Response } from "express";
 
-
-import tiposRepositoryMongo from './../db/tipos.repository.mongo';
 import tiposRepository from '../../domain/tipos.repository';
 import tiposUsecases from '../../application/tipos.usecases';
+import tiposRepositoryPostgres from "../db/tipos.repository.postgres";
 
 
-const tiposrepository: tiposRepository = new tiposRepositoryMongo();
+const tiposrepository: tiposRepository = new tiposRepositoryPostgres();
 
 const tiposusecases: tiposUsecases = new tiposUsecases(
     tiposrepository
@@ -14,14 +13,10 @@ const tiposusecases: tiposUsecases = new tiposUsecases(
 
 const router = express.Router();
 
-router.get("/tipos", async (req: Request, res: Response) => {
+router.get("/", async (req: Request, res: Response) => {
     const tipos = await tiposusecases.listar();
     res.json(tipos);
 });
 
-router.get("/poblar", async (req: Request, res: Response) => {
-    const tipos = await tiposusecases.poblar();
-    res.json(tipos);
-});
 
 export default router;

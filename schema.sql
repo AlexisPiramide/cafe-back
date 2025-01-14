@@ -9,9 +9,10 @@ CREATE TABLE tipos (
 
 CREATE TABLE cafes (
     nombre VARCHAR(100) PRIMARY KEY,
-    tipo VARCHAR(50) NOT NULL,
+    tipo VARCHAR(50) PRIMARY KEY,
     imagen TEXT,
-    link TEXT,
+    tienda TEXT PRIMARY KEY,
+    precio NUMBER NOT NULL,
     FOREIGN KEY (tipo) REFERENCES tipos(nombre) ON DELETE SET NULL
 );
 
@@ -23,6 +24,20 @@ CREATE TABLE notas (
     FOREIGN KEY (usuario) REFERENCES usuarios(alias) ON DELETE CASCADE,
     FOREIGN KEY (cafe) REFERENCES cafes(nombre) ON DELETE CASCADE
 );
+
+CREATE TABLE carrito (
+    id
+    usuario VARCHAR(50) NOT NULL,
+    cafe
+    cantidad
+)
+
+CREATE TABLE pedido (
+    id
+    usuario VARCHAR(50) NOT NULL,
+    cafe
+    cantidad
+)
 
 
 -- Insert example users
